@@ -1,32 +1,65 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <v-app id="inspire">
+    <v-app-bar app color="primary">
+      <router-link class="text-decoration-none" to="/dashboard">
+        <v-toolbar-title class="white--text"> AUXICAM - APP </v-toolbar-title>
+      </router-link>
+
+      <router-link
+        class="text-decoration-none m-2"
+        to="/usuario"
+        v-if="isLoggedIn"
+      >
+        <v-btn text class="white--text"> Usuarios </v-btn>
+      </router-link>
+
+      <router-link
+        class="text-decoration-none"
+        to="/simcard"
+        v-if="isLoggedIn"
+      >
+        <v-btn text class="white--text"> SimCards </v-btn>
+      </router-link>
+
+      <v-spacer></v-spacer>
+      <router-link class="text-decoration-none" to="/login" v-if="!isLoggedIn">
+        <v-btn text class="white--text"> Login </v-btn>
+      </router-link>
+
+      <v-btn v-if="isLoggedIn" text class="white--text" @click="logout">
+        Salir
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<script>
+import User from "./apis/User";
+export default {
+  data() {
+    return {
+      isLoggedIn: false,
+      drawer: false,
+    };
+  },
+  mounted() {
+    this.$root.$on("login", () => {
+      this.isLoggedIn = true;
+    });
+    this.isLoggedIn = !!localStorage.getItem("auth");
+  },
+  methods: {
+    logout() {
+      User.logout().then(() => {
+        localStorage.removeItem("auth");
+        this.isLoggedIn = false;
+        this.$router.push({ name: "Login" });
+      });
+    },
+  },
+};
+</script>
