@@ -49,6 +49,14 @@ const routes = [
     meta: { authOnly: true }
   },
   {
+    path: "/reportes",
+    name: "Reportes",
+    component: function () {
+      return import('../views/Reportes.vue')
+    },
+    meta: { authOnly: true }
+  },
+  {
     path: "/simcard",
     name: "SimCard",
     component: function () {

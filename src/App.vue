@@ -21,6 +21,14 @@
         <v-btn text class="white--text"> SimCards </v-btn>
       </router-link>
 
+      <router-link
+        class="text-decoration-none"
+        to="/reportes"
+        v-if="isLoggedIn"
+      >
+        <v-btn text class="white--text"> Reportes </v-btn>
+      </router-link>
+
       <v-spacer></v-spacer>
       <router-link class="text-decoration-none" to="/login" v-if="!isLoggedIn">
         <v-btn text class="white--text"> Login </v-btn>
