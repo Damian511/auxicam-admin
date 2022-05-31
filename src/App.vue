@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire">
     <v-app-bar app color="primary">
-      <router-link class="text-decoration-none" to="/dashboard">
+      <router-link class="text-decoration-none" to="/">
         <v-toolbar-title class="white--text"> AUXICAM - APP </v-toolbar-title>
       </router-link>
 
