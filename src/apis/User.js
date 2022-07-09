@@ -24,7 +24,36 @@ export default {
     return Api.get("/user");
   },
 
-  prueba(){
-    return Api.get("prueba");
-  }
+  obtenerUsuarios() {
+    return Api.get("/usuarios");
+  },
+
+  registrarUsuario(editedItem) {
+    return Api.post("/registerUser", editedItem)
+  },
+
+  updateUsuario(editedItem, id) {
+    return Api.put("/usuarios/" + id, editedItem)
+  },
+
+  desactivarUsuario(id) {
+    return Api.put("/usuarios/desactivar/" + id)
+  },
+
+  listarSIM() {
+    return Api.get("/simcard");
+  },
+
+  crearSIM(editedItem) {
+    return Api.post("/simcard", editedItem);
+  },
+
+  editarSIM(editedItem, id) {
+    return Api.put("/simcard/" + id, editedItem);
+  },
+
+  desactivarSIM(id) {
+    return Api.put("/simcard/desactivar/" + id);
+  },
+
 };

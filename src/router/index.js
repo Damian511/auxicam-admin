@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Login from "../views/Login.vue"
-import Register from "../views/Register.vue"
+import Register from "../views/Registro.vue"
 import Dashboard from "../views/Dashboard.vue"
 
 Vue.use(VueRouter)
@@ -10,11 +10,6 @@ Vue.use(VueRouter)
 Vue.prototype.$base = 'htpp://localhost/auxicam-back/public/index.php/api/';
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: HomeView
-  },
   {
     path: '/about',
     name: 'about',
@@ -32,6 +27,14 @@ const routes = [
     path: "/register",
     name: "Register",
     component: Register,
+    meta: { guestOnly: true }
+  },
+  {
+    path: "/nuevoUsuario",
+    name: "NuevoUsuario",
+    component: function () {
+      return import('../views/Registro.vue')
+    },
     meta: { guestOnly: true }
   },
   {

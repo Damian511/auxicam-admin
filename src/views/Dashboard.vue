@@ -1,9 +1,7 @@
 <template>
-  <div class="m-3">
-    <h1>Dashboard</h1>
-    <div class="card">
-    </div>
-  </div>
+  <v-container>
+    <span class="title block">Bienvenidos al Sistema de Gestión del aplicativo <span class="font-weight-black">AUXICAM</span></span>
+  </v-container>
 </template>
 
 <script>
@@ -16,9 +14,9 @@ export default {
     };
   },
   created() {
-    User.auth().then(response => {
+     User.auth().then(response => {
       this.user = response.data;
-    });
+    }); 
   }
 };
 </script>

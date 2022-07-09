@@ -1,37 +1,28 @@
 <template>
   <v-app id="inspire">
     <v-app-bar app color="primary">
-      <router-link class="text-decoration-none" to="/">
+      <router-link class="text-decoration-none" to="/dashboard">
         <v-toolbar-title class="white--text"> AUXICAM - APP </v-toolbar-title>
       </router-link>
 
-      <router-link
-        class="text-decoration-none m-2"
-        to="/usuario"
-        v-if="isLoggedIn"
-      >
+      <router-link class="text-decoration-none m-2" to="/usuario" v-if="isLoggedIn">
         <v-btn text class="white--text"> Usuarios </v-btn>
       </router-link>
 
-      <router-link
-        class="text-decoration-none"
-        to="/simcard"
-        v-if="isLoggedIn"
-      >
+      <router-link class="text-decoration-none" to="/simcard" v-if="isLoggedIn">
         <v-btn text class="white--text"> SimCards </v-btn>
       </router-link>
 
-      <router-link
-        class="text-decoration-none"
-        to="/reportes"
-        v-if="isLoggedIn"
-      >
+      <router-link class="text-decoration-none" to="/reportes" v-if="isLoggedIn">
         <v-btn text class="white--text"> Reportes </v-btn>
       </router-link>
 
       <v-spacer></v-spacer>
       <router-link class="text-decoration-none" to="/login" v-if="!isLoggedIn">
         <v-btn text class="white--text"> Login </v-btn>
+      </router-link>
+      <router-link class="text-decoration-none" to="/register" v-if="!isLoggedIn">
+        <v-btn text class="white--text"> Registrar </v-btn>
       </router-link>
 
       <v-btn v-if="isLoggedIn" text class="white--text" @click="logout">
