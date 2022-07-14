@@ -39,11 +39,11 @@
 
                 <v-card-actions>
                   <v-spacer></v-spacer>
-                  <v-btn color="green darken-1" text @click.prevent="validate">
-                    Guardar
-                  </v-btn>
                   <v-btn color="red darken-1" text @click="close">
                     Cancelar
+                  </v-btn>
+                  <v-btn color="green darken-1" text @click.prevent="validate">
+                    Guardar
                   </v-btn>
                 </v-card-actions>
               </v-form>
@@ -93,7 +93,7 @@ export default {
     dialogDelete: false,
     snackbar: false,
     textSnack: '',
-    timeout:5000,
+    timeout:3000,
     headers: [
       { text: "ID", value: "simcardid" },
       { text: "Numero", value: "numero" },

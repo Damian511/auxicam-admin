@@ -5,7 +5,7 @@
         <v-layout justify-center>
           <v-flex xs12 sm8 md4>
             <v-slide-y-transition>
-              <v-card class="elevation-24" min-width="600">
+              <v-card class="elevation-24" min-width="30%">
                 <v-toolbar dark color="primary">
                   <v-toolbar-title>REGISTRAR USUARIO</v-toolbar-title>
                 </v-toolbar>

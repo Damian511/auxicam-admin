@@ -6,7 +6,7 @@
           <v-toolbar-title>Usuarios</v-toolbar-title>
           <v-divider class="mx-4" inset vertical></v-divider>
           <v-spacer></v-spacer>
-          <v-dialog v-model="dialog" max-width="850px" persistent>
+          <v-dialog v-model="dialog" max-width="50%" persistent>
             <template v-slot:activator="{ on, attrs }">
               <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
                 Nuevo Usuario
@@ -73,11 +73,11 @@
 
                 <v-card-actions>
                   <v-spacer></v-spacer>
-                  <v-btn color="green darken-1" text @click.prevent="validate">
-                    Guardar
-                  </v-btn>
                   <v-btn color="red darken-1" text @click="close">
                     Cancelar
+                  </v-btn>
+                  <v-btn color="green darken-1" text @click.prevent="validate">
+                    Guardar
                   </v-btn>
                 </v-card-actions>
               </v-form>
@@ -123,7 +123,7 @@ export default {
     valid: false,
     snackbar: false,
     textSnack: '',
-    timeout:5000,
+    timeout:3000,
     defaultRules: [
       (v) => !!v || "El campo es obligatorio",
     ],
