@@ -38,7 +38,7 @@ const routes = [
     meta: { guestOnly: true }
   },
   {
-    path: "/dashboard",
+    path: "/",
     name: "Dashboard",
     component: Dashboard,
     meta: { authOnly: true }

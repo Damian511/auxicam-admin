@@ -123,7 +123,7 @@ export default {
     valid: false,
     snackbar: false,
     textSnack: '',
-    timeout:3000,
+    timeout: 3000,
     defaultRules: [
       (v) => !!v || "El campo es obligatorio",
     ],
@@ -236,7 +236,7 @@ export default {
           this.textSnack = 'Se realizo la operación'
         }).catch()
     },
-    
+
     desactivarUsuario() {
       User.desactivarUsuario(this.editedItem.id)
         .then(() => {
@@ -266,10 +266,10 @@ export default {
       this.dialogDelete = true;
     },
 
-/*     deleteItemConfirm() {
-      this.usuarios.splice(this.editedIndex, 1);
-      this.closeDelete();
-    }, */
+    /*     deleteItemConfirm() {
+          this.usuarios.splice(this.editedIndex, 1);
+          this.closeDelete();
+        }, */
 
     close() {
       this.dialog = false;

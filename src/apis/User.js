@@ -56,4 +56,13 @@ export default {
     return Api.put("/simcard/desactivar/" + id);
   },
 
+  reporteUsuario(){
+    return Api.get("/reporteUsuarios",{responseType: 'blob'});
+  },
+
+  reporteSIM(){
+    return Api.get("/reporteSIM",{responseType: 'blob'});
+  }
+
+
 };
