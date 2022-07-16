@@ -19,7 +19,7 @@ import User from '@/apis/User'
 export default {
     data() {
         return {
-            reportes: [{ 'text': 'Usuarios Activos', 'value': 'user' }, { 'text': 'Simcards Activos', 'value': 'sim' }],
+            reportes: [{ 'text': 'Usuarios Activos', 'value': 'user' }, { 'text': 'Simcards', 'value': 'sim' }],
             select: ''
         }
     },
