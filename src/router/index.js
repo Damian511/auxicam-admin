@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import Login from "../views/Login.vue"
 import Register from "../views/Registro.vue"
 import Dashboard from "../views/Dashboard.vue"
+import NotFound from '@/views/NotFound.vue';
 
 Vue.use(VueRouter)
 
@@ -16,6 +17,11 @@ const routes = [
     component: function () {
       return import('../views/AboutView.vue')
     }
+  },
+  {
+    path: '*',
+    name: 'Not Found',
+    component: NotFound
   },
   {
     path: "/login",
