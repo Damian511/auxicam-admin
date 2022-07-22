@@ -7,7 +7,7 @@
             <v-slide-y-transition>
               <v-card class="elevation-24" min-width="30%">
                 <v-toolbar dark color="primary">
-                  <v-toolbar-title>REGISTRAR USUARIO</v-toolbar-title>
+                  <v-toolbar-title>REGISTRAR USUARIOS</v-toolbar-title>
                 </v-toolbar>
                 <v-card-text>
                   <v-form ref="register" v-model="valid" lazy-validation @submit.prevent="validar">

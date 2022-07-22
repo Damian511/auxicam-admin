@@ -3,7 +3,7 @@
     <v-data-table :headers="headers" :items="simcards" sort-by="calories" class="elevation-1">
       <template v-slot:top>
         <v-toolbar flat>
-          <v-toolbar-title>Usuarios</v-toolbar-title>
+          <v-toolbar-title>SimCards</v-toolbar-title>
           <v-divider class="mx-4" inset vertical></v-divider>
           <v-spacer></v-spacer>
           <v-dialog v-model="dialog" max-width="850px" persistent>
@@ -148,11 +148,12 @@ export default {
     },
     altaSim() {
       User.crearSIM(this.editedItem)
-        .then(() => {
+        .then((response) => {
           this.getSim()
           this.snackbar = true
           this.textSnack = 'Se realizo la operación'
         }).catch(error => {
+          console.log(response)
           this.snackbar = true
           this.textSnack = 'No se pudo realizar la operación'
         })
